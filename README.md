@@ -1,21 +1,15 @@
-# Refactor For Accessibility
+# Random Password Generator
 
 ## Description
 
-This is a description. 
+This is a program that will randomly generate a password between 8 and 128 characters. The user has the ability to choose whether or not they want the password to include uppercase letters, lowercase letters, numbers, and special characters.
 
-**Change notes:**
-- Changed many things
+**Demo of the password generator in action**
 
-
-![]()
+![Demo of the password generator in action]()
 
 
-**Example of Changes**
-
-![]()
-
-*(Homework project #n for the UC Berkeley Full-Stack Developer Bootcamp)*
+*(Homework project #3 for the UC Berkeley Full-Stack Developer Bootcamp)*
 
 ## Prerequisites
 Any modern internet browser will do!
@@ -43,7 +37,7 @@ Any modern internet browser will do!
 
 ## Deployed Link
 
-* [See the Live Site!]()
+* [See the Live Site!](https://argibson02.github.io/Password-Generator/)
 
 ## Authors
 
@@ -56,4 +50,3 @@ Any modern internet browser will do!
 ## Acknowledgments 😊
 
 - Thanks to Jerome, Manuel, Cheng, and Daniel for instructing the UCB Coding Bootcamp.
-- Thank you CSS-Tricks for the [flexbox guide](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
