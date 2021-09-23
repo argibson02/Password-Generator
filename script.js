@@ -19,10 +19,6 @@ generateBtn.addEventListener("click", writePassword);
 
 
 
-
-
-
-
 function generatePassword() {
   ////Global Character Arrays////
   var yourPassword = [];
