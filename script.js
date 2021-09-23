@@ -38,28 +38,28 @@ function generatePassword() {
     var localPasswordArray = [];
     
     //UPPERCASE//
-    var haveUpper = confirm("Would you like your password to include uppercase letters?"); {
+    var haveUpper = confirm("Would you like your password to include uppercase letters? Select 'OK' for yes and 'Cancel' for no."); {
       if (haveUpper === true) {
         var localPasswordArray = localPasswordArray.concat(uppercase);
       }
     }
     
     //LOWERCASE//
-    var haveLower = confirm("Would you like your password to include lowercase letters?"); {
+    var haveLower = confirm("Would you like your password to include lowercase letters? Select 'OK' for yes and 'Cancel' for no."); {
       if (haveLower === true) {
         var localPasswordArray = localPasswordArray.concat(lowercase);
       }
     }
     
     //NUMBER//
-    var haveNumber = confirm("Would you like your password to include numbers?"); {
+    var haveNumber = confirm("Would you like your password to include numbers?  Select 'OK' for yes and 'Cancel' for no."); {
       if (haveNumber === true) {
         var localPasswordArray = localPasswordArray.concat(numbers);
       }
     }
     
     //SPECIAL CHARACTER
-    var haveSpecial = confirm("Would you like your password to include special characters?"); {
+    var haveSpecial = confirm("Would you like your password to include special characters? Select 'OK' for yes and 'Cancel' for no."); {
       if (haveSpecial === true) {
         var localPasswordArray = localPasswordArray.concat(special);
       }
@@ -93,11 +93,11 @@ function generatePassword() {
     */
    
     if (localRunTime > 128) {
-      alert("The password length must be between 8 and 128 characters.");
+      alert("The password length must be between 8 and 128 characters. Too high.");
       return formRunTime();
     }
     else if (localRunTime < 8) {
-      alert("The password length must be between 8 and 128 characters.");
+      alert("The password length must be between 8 and 128 characters. Too low.");
       return formRunTime();
     }
     globalRunTime = localRunTime
