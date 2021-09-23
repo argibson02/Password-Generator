@@ -18,7 +18,6 @@ generateBtn.addEventListener("click", writePassword);
 
 
 
-
 function generatePassword() {
   ////Global Character Arrays////
   var yourPassword = [];
@@ -44,7 +43,6 @@ function generatePassword() {
         var localPasswordArray = localPasswordArray.concat(uppercase);
       }
     }
-    //console.log(localPasswordArray);  //DELETE THIS LINE UPON COMPLETION//
     
     //LOWERCASE//
     var haveLower = confirm("Would you like your password to include lowercase letters?"); {
@@ -52,7 +50,6 @@ function generatePassword() {
         var localPasswordArray = localPasswordArray.concat(lowercase);
       }
     }
-    //console.log(localPasswordArray);   //DELETE THIS LINE UPON COMPLETION//
     
     //NUMBER//
     var haveNumber = confirm("Would you like your password to include numbers?"); {
@@ -60,7 +57,6 @@ function generatePassword() {
         var localPasswordArray = localPasswordArray.concat(numbers);
       }
     }
-    //console.log(localPasswordArray);   //DELETE THIS LINE UPON COMPLETION//
     
     //SPECIAL CHARACTER
     var haveSpecial = confirm("Would you like your password to include special characters?"); {
@@ -68,7 +64,6 @@ function generatePassword() {
         var localPasswordArray = localPasswordArray.concat(special);
       }
     }
-    //console.log(localPasswordArray);   //DELETE THIS LINE UPON COMPLETION//
     
     //IF NONE SELECTED//
     if (haveUpper !== true && haveLower !== true  && haveNumber !== true  && haveSpecial !== true ) {
@@ -105,8 +100,6 @@ function generatePassword() {
       alert("The password length must be between 8 and 128 characters.");
       return formRunTime();
     }
-    //console.log("below is the local")
-    //console.log(localRunTime)
     globalRunTime = localRunTime
   }
   formRunTime()
