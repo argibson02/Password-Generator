@@ -2,7 +2,7 @@
 var generateBtn = document.querySelector("#generate");
 //generateBtn.onclick = "formPassArray()"" 
 
-/*
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -14,31 +14,22 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-*/
+
 
 
 //Character Arrays
-/*
-var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "S", "t", "u", "v", "w", "x", "y", "z"];
-var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
-var special = ["!", "#", "$", "%", "&", "(", ")", "*", "+", "-", ",", ".", "/", ":", "<", "=", ">", "?", "@", "[", "\"", "\'", "]", "^", "_", "`", "{", "|", "}", "~", ";", "\\"];
-*/
 var yourPassword = [];
-
-
-
-var globalPasswordArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-
-
-//var globalPasswordArray = [];
-var globalRunTime = 8;
+//var globalPasswordArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var globalPasswordArray = [];
+var globalRunTime = 0;
 //Forming passwordArray Logic/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+////
+console.log("--------------------------------------------------------");
+console.log("formPassArray START");
+////
 
-
-/*
 function formPassArray() {
   //Character Arrays   
   var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
@@ -71,7 +62,6 @@ function formPassArray() {
   }
   //console.log(localPasswordArray);
   
-  
   //SPECIAL CHARACTER
   var haveSpecial = confirm("Would you like your password to include special characters?"); {
     if (haveSpecial === true) {
@@ -79,7 +69,6 @@ function formPassArray() {
     }
   }
   //console.log(localPasswordArray);
-  
   
   //IF NONE SELECTED
   if (haveUpper !== true && haveLower !== true  && haveNumber !== true  && haveSpecial !== true ) {
@@ -90,26 +79,30 @@ function formPassArray() {
 }
 
 formPassArray();
-console.log("--------------------------------------------------------");
 console.log(globalPasswordArray);
-*/
+
 
 //Runtime Logic/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+///
+console.log("--------------------------------------------------------");
+console.log("formRunTime START");
+///
 
-/*
+
+
 function formRunTime() {
 var localRunTime = prompt("Please choose the length of your password. The length must be between 8 and 128 characters."); 
-*/
-  /*  Need to make error for inputting a letter
+
+  /*  ////Need to make error for inputting letter characters//////
   if (localRunTime typeof number) {
   alert("You must enter in a number.");
   return formRunTime();
   }
   else 
   */
- /*
+ 
   if (localRunTime > 128) {
     alert("The password length must be between 8 and 128 characters.");
     return formRunTime();
@@ -125,23 +118,16 @@ var localRunTime = prompt("Please choose the length of your password. The length
 formRunTime()
 console.log("below is the global")
 console.log(globalRunTime)
-*/
+
 
 
 //Runtime Logic/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/*
-function gettingRandoms() {
-  var yourPassword = [];
-  var randoms = globalPasswordArray[Math.floor(Math.random() * globalPasswordArray.length)];
-  yourPassword = yourPassword.concat(randoms);
-console.log(randoms);
-console.log(yourPassword);
-}
-return
-gettingRandoms();
-*/
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+///
+console.log("--------------------------------------------------------");
+console.log("globalRunTime START");
+///
 
 
 for (let i = 0; i < globalRunTime; i++) {
@@ -152,11 +138,4 @@ console.log(yourPassword);
 yourPassword.join('');
 console.log(yourPassword.join(''));
 
-
-
-//for (let i = 0; i < globalRunTime; i++) {
-
-
-
-//how to convert into string-  joining
-//console.log(yourPassword(''))
+////need a way to give the joined string to the user....
