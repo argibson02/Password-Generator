@@ -6,7 +6,7 @@ This is a program that will randomly generate a password between 8 and 128 chara
 
 **Demo of the password generator in action**
 
-![Demo of the password generator in action]()
+![Demo of the password generator in action](https://github.com/argibson02/Password-Generator/blob/main/images/demo-password-generator.gif?raw=true)
 
 
 *(Homework project #3 for the UC Berkeley Full-Stack Developer Bootcamp)*
