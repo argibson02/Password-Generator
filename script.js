@@ -1,31 +1,17 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-//generateBtn.onclick = "formPassArray()"" 
-
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-}
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-
-
-
 
 //var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 //var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 //var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 //var special = ["!", "#", "$", "%", "&", "(", ")", "*", "+", "-", ",", ".", "/", ":", "<", "=", ">", "?", "@", "[", "\"", "\'", "]", "^", "_", "`", "{", "|", "}", "~", ";", "\\"];
- ///WHY DONT THESE GLOBALS WORK????-------------------------------------
+var yourPasswordString = "" 
+///WHY DONT THESE GLOBALS WORK????-------------------------------------
+
+
 
 function generatePassword() {
-  ////Global Character Arrays////
+ /////Global Character Arrays////
   var yourPassword = [];
   var globalPasswordArray = [];
   var globalRunTime = 0;
@@ -76,7 +62,7 @@ function generatePassword() {
       alert("You must select at least one option!");
       return formPassArray();
     }
-      globalPasswordArray = localPasswordArray;
+      globalPasswordArray = localPasswordArray;   //IS THIS IS THE PROPER WAY TO GET A VALUE COMPUTED BY A FUNCTION VALUE TO BE USED OUTSIDE OF THE FUNCTION? ---------------------------------
   }
   formPassArray();
   console.log(globalPasswordArray);     //DELETE THIS LINE UPON COMPLETION//
@@ -88,7 +74,7 @@ function generatePassword() {
   
 
   function formRunTime() {
-  var localRunTime = prompt("Please choose the length of your password. The length must be between 8 and 128 characters."); 
+    var localRunTime = prompt("Please choose the length of your password. The length must be between 8 and 128 characters."); 
     var localRunTime = parseInt(localRunTime)
       ////Need to make error for inputting letter characters//////
     if (isNaN(localRunTime)) {  ///HOW TO USE TYPEOF AS ENFORCEMENT???? PROMPT TAKES IN THINGS AS A STRING. ------------------ currently using parseInt and comparing with Nan
@@ -119,9 +105,53 @@ function generatePassword() {
     yourPassword = yourPassword.concat(randoms);
   }
   console.log(yourPassword);  //DELETE THIS LINE UPON COMPLETION//
-  yourPassword.join('');
   console.log(yourPassword.join(''));   //DELETE THIS LINE UPON COMPLETION//
-  
-  //generatePassword = yourPassword.join('')
-  ////need a way to give the joined string to the user and need to nest my logic into the generate function ...
+  yourPasswordString = yourPassword.join(''); //
 }
+
+
+// Write password to the #password input
+function writePassword() {
+  generatePassword();
+  var password = yourPasswordString; /// why is generate password not returning a what is is the function?
+  console.log("------password log below---------------");//
+  console.log(password);//
+  var passwordText = document.querySelector("#password");
+  passwordText.value = password;
+}
+
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword(); /// why is generate password not returning a what is is the function?
+  console.log("------password log below---------------");//
+  console.log(password);//
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+
+}
+
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+*/
