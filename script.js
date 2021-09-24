@@ -1,11 +1,13 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-//var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-//var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-//var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
-//var special = ["!", "#", "$", "%", "&", "(", ")", "*", "+", "-", ",", ".", "/", ":", "<", "=", ">", "?", "@", "[", "\"", "\'", "]", "^", "_", "`", "{", "|", "}", "~", ";", "\\"];
+var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+var special = ["!", "#", "$", "%", "&", "(", ")", "*", "+", "-", ",", ".", "/", ":", "<", "=", ">", "?", "@", "[", "\"", "\'", "]", "^", "_", "`", "{", "|", "}", "~", ";", "\\"];
 var yourPasswordString = "" 
+var globalPasswordArray = [];
+
 ///WHY DONT THESE GLOBALS WORK????-------------------------------------
 
 
@@ -13,7 +15,7 @@ var yourPasswordString = ""
 function generatePassword() {
  /////Global Character Arrays////
   var yourPassword = [];
-  var globalPasswordArray = [];
+  //var globalPasswordArray = [];
   var globalRunTime = 0;
 
   ////Forming globalPasswordArray Logic////
@@ -23,10 +25,10 @@ function generatePassword() {
   
   function formPassArray() {
     //Character Arrays//   
-    var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-    var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-    var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
-    var special = ["!", "#", "$", "%", "&", "(", ")", "*", "+", "-", ",", ".", "/", ":", "<", "=", ">", "?", "@", "[", "\"", "\'", "]", "^", "_", "`", "{", "|", "}", "~", ";", "\\"];
+    //var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+    //var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+    //var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+    //var special = ["!", "#", "$", "%", "&", "(", ")", "*", "+", "-", ",", ".", "/", ":", "<", "=", ">", "?", "@", "[", "\"", "\'", "]", "^", "_", "`", "{", "|", "}", "~", ";", "\\"];
     var localPasswordArray = [];
     
     //UPPERCASE//
@@ -95,7 +97,7 @@ function generatePassword() {
   console.log(globalRunTime)   //DELETE THIS LINE UPON COMPLETION//
   
 
-  ////Runtime Logic////
+  ////Randomize Logic////
   console.log("--------------------------------------------------------");  //DELETE THIS LINE UPON COMPLETION//
   console.log("globalRunTime START");   //DELETE THIS LINE UPON COMPLETION//
 
@@ -106,16 +108,19 @@ function generatePassword() {
   }
   console.log(yourPassword);  //DELETE THIS LINE UPON COMPLETION//
   console.log(yourPassword.join(''));   //DELETE THIS LINE UPON COMPLETION//
-  yourPasswordString = yourPassword.join(''); //
+  yourPasswordString = yourPassword.join('');
+  return yourPasswordString
 }
 
 
+
+/*
 // Write password to the #password input
 function writePassword() {
   generatePassword();
   var password = yourPasswordString; /// why is generate password not returning a what is is the function?
-  console.log("------password log below---------------");//
-  console.log(password);//
+  console.log("------password log below---------------");//  //DELETE THIS LINE UPON COMPLETION//
+  console.log(password);//  //DELETE THIS LINE UPON COMPLETION//
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
 }
@@ -123,23 +128,10 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+*/
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword(); /// why is generate password not returning a what is is the function?
@@ -154,4 +146,4 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-*/
+
