@@ -1,59 +1,49 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+ /////INITIALIZING GLOBAL CHARACTER VARIABLES (MOSTLY ARRAYS)////
 var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 var special = ["!", "#", "$", "%", "&", "(", ")", "*", "+", "-", ",", ".", "/", ":", "<", "=", ">", "?", "@", "[", "\"", "\'", "]", "^", "_", "`", "{", "|", "}", "~", ";", "\\"];
-var yourPasswordString = "" 
+var yourPasswordString = "";
 var globalPasswordArray = [];
-
-///WHY DONT THESE GLOBALS WORK????-------------------------------------
-
+var globalRunTime = 0; 
 
 
 function generatePassword() {
- /////Global Character Arrays////
+  //INITIALIZING yourPassword VARIABLE USED IN SELECTING RANDOM CHARACTERS
   var yourPassword = [];
-  //var globalPasswordArray = [];
-  var globalRunTime = 0;
 
-  ////Forming globalPasswordArray Logic////
-  console.log("--------------------------------------------------------");     //DELETE THIS LINE UPON COMPLETION//
-  console.log("formPassArray START");     //DELETE THIS LINE UPON COMPLETION//
-
-  
+  //FORMING GLOBAL ARRAY THAT WILL BE USED FOR CHARACTER SELECTION
   function formPassArray() {
-    //Character Arrays//   
-    //var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-    //var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-    //var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
-    //var special = ["!", "#", "$", "%", "&", "(", ")", "*", "+", "-", ",", ".", "/", ":", "<", "=", ">", "?", "@", "[", "\"", "\'", "]", "^", "_", "`", "{", "|", "}", "~", ";", "\\"];
+    
+    //INITIALIZING LOCAL ARRAY
     var localPasswordArray = [];
     
     //UPPERCASE//
-    var haveUpper = confirm("Would you like your password to include uppercase letters? Select 'OK' for yes and 'Cancel' for no."); {
+    var haveUpper = confirm("Would you like your password to include UPPERCASE LETTERS? Select 'OK' for yes and 'Cancel' for no."); {
       if (haveUpper === true) {
         var localPasswordArray = localPasswordArray.concat(uppercase);
       }
     }
     
     //LOWERCASE//
-    var haveLower = confirm("Would you like your password to include lowercase letters? Select 'OK' for yes and 'Cancel' for no."); {
+    var haveLower = confirm("Would you like your password to include LOWERCASE LETTERS? Select 'OK' for yes and 'Cancel' for no."); {
       if (haveLower === true) {
         var localPasswordArray = localPasswordArray.concat(lowercase);
       }
     }
     
     //NUMBER//
-    var haveNumber = confirm("Would you like your password to include numbers?  Select 'OK' for yes and 'Cancel' for no."); {
+    var haveNumber = confirm("Would you like your password to include NUMBERS?  Select 'OK' for yes and 'Cancel' for no."); {
       if (haveNumber === true) {
         var localPasswordArray = localPasswordArray.concat(numbers);
       }
     }
     
     //SPECIAL CHARACTER//
-    var haveSpecial = confirm("Would you like your password to include special characters? Select 'OK' for yes and 'Cancel' for no."); {
+    var haveSpecial = confirm("Would you like your password to include SPECIAL CHARACTERS? Select 'OK' for yes and 'Cancel' for no."); {
       if (haveSpecial === true) {
         var localPasswordArray = localPasswordArray.concat(special);
       }
@@ -64,22 +54,16 @@ function generatePassword() {
       alert("You must select at least one option!");
       return formPassArray();
     }
-      globalPasswordArray = localPasswordArray;   //IS THIS IS THE PROPER WAY TO GET A VALUE COMPUTED BY A FUNCTION VALUE TO BE USED OUTSIDE OF THE FUNCTION? ---------------------------------
+      globalPasswordArray = localPasswordArray;
   }
   formPassArray();
-  console.log(globalPasswordArray);     //DELETE THIS LINE UPON COMPLETION//
-  
 
-  ////Runtime Logic////
-  console.log("--------------------------------------------------------");   //DELETE THIS LINE UPON COMPLETION//
-  console.log("formRunTime START");    //DELETE THIS LINE UPON COMPLETION//
   
-
+  ////RUN COUNT LOGIC////
   function formRunTime() {
     var localRunTime = prompt("Please choose the length of your password. The length must be between 8 and 128 characters."); 
-    var localRunTime = parseInt(localRunTime)
-      ////Need to make error for inputting letter characters//////
-    if (isNaN(localRunTime)) {  ///HOW TO USE TYPEOF AS ENFORCEMENT???? PROMPT TAKES IN THINGS AS A STRING. ------------------ currently using parseInt and comparing with Nan
+    var localRunTime = parseInt(localRunTime);
+    if (isNaN(localRunTime)) {
       alert("You must enter in a number.");
       return formRunTime();
     }
@@ -91,59 +75,36 @@ function generatePassword() {
       alert("The password length must be between 8 and 128 characters. Too low.");
       return formRunTime();
     }
-    globalRunTime = localRunTime
+    globalRunTime = localRunTime;
   }
-  formRunTime()
-  console.log(globalRunTime)   //DELETE THIS LINE UPON COMPLETION//
+  formRunTime();
   
 
-  ////Randomize Logic////
-  console.log("--------------------------------------------------------");  //DELETE THIS LINE UPON COMPLETION//
-  console.log("globalRunTime START");   //DELETE THIS LINE UPON COMPLETION//
-
-  
+  ////RANDOM CHARACTER SELECTION LOGIC////
   for (let i = 0; i < globalRunTime; i++) {
-    var randoms = globalPasswordArray[Math.floor(Math.random() * globalPasswordArray.length)];   ////IS IT BETTER TO PUT FOR LOOPS INSIDE OF FUNCTIONS?--------------------------
+    var randoms = globalPasswordArray[Math.floor(Math.random() * globalPasswordArray.length)];
     yourPassword = yourPassword.concat(randoms);
   }
-  console.log(yourPassword);  //DELETE THIS LINE UPON COMPLETION//
-  console.log(yourPassword.join(''));   //DELETE THIS LINE UPON COMPLETION//
   yourPasswordString = yourPassword.join('');
-  return yourPasswordString
+  return yourPasswordString;
 }
 
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+  passwordText.value = password;
+}
 
-
-/*
+/*      ALTERNATE WAY TO GRAB THE PASSWORD WITHOUT USING RETURN ON yourPasswordString
 // Write password to the #password input
 function writePassword() {
   generatePassword();
-  var password = yourPasswordString; /// why is generate password not returning a what is is the function?
-  console.log("------password log below---------------");//  //DELETE THIS LINE UPON COMPLETION//
-  console.log(password);//  //DELETE THIS LINE UPON COMPLETION//
+  var password = yourPasswordString;
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
 }
-
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
 */
 
-
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword(); /// why is generate password not returning a what is is the function?
-  console.log("------password log below---------------");//
-  console.log(password);//
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-}
-
-
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
